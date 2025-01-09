@@ -10,13 +10,28 @@
     <nav>
         <ul>
             <li><a href="/Users/andresriera/Desktop/dsc-106/portfolio/index.html">Home</a></li>
-            <li><a href="/Users/andresriera/Desktop/dsc-106/portfolio/contact:index.html">Contact</a></li>
             <li><a href="/Users/andresriera/Desktop/dsc-106/portfolio/projects:index.html">Projects</a></li>
+            <li><a href="/Users/andresriera/Desktop/dsc-106/portfolio/contact:index.html">Contact</a></li>
             <li><a href="https://github.com/AndresRiera" target="_blank">GitHub</a></li>
 
         </ul>
     
     <h1>Projects</h1>
-    <p>Welcome to my projects page. Here you will find details about the work I've done and the projects I've completed.</p>
+    <form action="arieraortizparraga@ucsd.edu" method="POST" enctype="text/plain">
+        <!-- Email Address -->
+        <label for="email">Your Email:</label><br>
+        <input id="email" name="email" type="email" required><br><br>
+        
+        <!-- Subject -->
+        <label for="subject">Subject:</label><br>
+        <input id="subject" name="subject" type="text" required><br><br>
+        
+        <!-- Message Body -->
+        <label for="body">Message:</label><br>
+        <textarea id="body" name="body" rows="5" required></textarea><br><br>
+        
+        <!-- Submit Button -->
+        <button>Send Message</button>
+    </form>
 </body>
 </html>
