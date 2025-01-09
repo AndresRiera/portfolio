@@ -16,6 +16,21 @@
         </ul>
     </nav>
     <h1>Contact</h1>
-    <p>Get in touch! Feel free to reach out via email or through the contact form below.</p>
+    <form action="arieraortizparraga@ucsd.edu" method="POST" enctype="text/plain">
+        <!-- Email Address -->
+        <label for="email">Your Email:</label><br>
+        <input id="email" name="email" type="email" required><br><br>
+        
+        <!-- Subject -->
+        <label for="subject">Subject:</label><br>
+        <input id="subject" name="subject" type="text" required><br><br>
+        
+        <!-- Message Body -->
+        <label for="body">Message:</label><br>
+        <textarea id="body" name="body" rows="5" required></textarea><br><br>
+        
+        <!-- Submit Button -->
+        <button>Send Message</button>
+    </form>
 </body>
 </html>
