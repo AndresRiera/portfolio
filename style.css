@@ -49,6 +49,8 @@ body {
   
   form {
     display: grid;
-    grid-template-columns: auto 1fr; /* Two columns: auto for labels, 1fr for inputs */
-
+    grid-template-columns: auto 1fr; 
     }
+  label {
+    grid-template-columns: subgrid
+  }
