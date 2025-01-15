@@ -68,7 +68,7 @@ body {
     }
   .projects {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(10em, 1fr));
     gap: 1em; /* Adds spacing between grid items */
     padding: 1em; /* Optional: Adds some padding around the grid */
     }
