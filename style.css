@@ -55,8 +55,7 @@ body {
     }
     
   label {
-    display: grid; /* Make labels grid containers */
-    grid-template-columns: subgrid; /* Use subgrid to inherit the form's grid */
+    text-align: right;
     grid-column: 1; /* Place label in the first column */
     }
     
