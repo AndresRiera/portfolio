@@ -53,4 +53,5 @@ body {
       display: block;
       width: 100%; 
       box-sizing: border-box; 
+      margin-block: 0.5em;
     }
