@@ -50,6 +50,7 @@ body {
     }
 
   label {
+    display: subgrid;
     grid-column: 1;
     margin: 0;
     }
@@ -57,6 +58,7 @@ body {
   input,
   textarea, 
   button {
+    display: subgrid;
     grid-column: 2;
     margin: 0;
     }
