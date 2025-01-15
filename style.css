@@ -52,7 +52,6 @@ body {
   label {
     grid-column: 1;
     margin: 0;
-    align-self: center;
     }
 
   input,
@@ -60,7 +59,6 @@ body {
   button {
     grid-column: 2;
     margin: 0;
-    align-self: center;
     }
   button {
     grid-column: 1 / -1;
