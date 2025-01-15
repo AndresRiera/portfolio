@@ -112,3 +112,14 @@ body {
     font-size: 200%; 
     margin-bottom: 0.5em;
     }
+  h1 {
+    color: #00274d; /* Dark navy blue */
+    }
+  
+  h2 {
+    color: #004080; /* Medium blue */
+    }
+  
+  h3 {
+    color: #0056b3; /* Lighter blue */
+    }
