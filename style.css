@@ -1,43 +1,51 @@
 :root {
   --color-accent: oklch(65% 50% 0);
-  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 html {
+  font-size: 16px;
   accent-color: var(--color-accent);
-  }
+}
 
 body {
-    /* Set line height to 1.5 times the font size
-         and use the OS’s UI font as the website font
-       */
-    font: 100%/1.5 system-ui;
-    max-width: 100ch;
-    margin-inline: auto;
-    padding: 0 1rem;
-  }
-  nav ul, 
-  nav li {
-    display: contents;
-    }
-  nav {
-      display: flex;
-      margin-bottom: 1rem;
-      border-bottom: 1px solid oklch(80% 3% 200);
-    }
-  
-  nav a {
-      flex: 1; 
-      text-decoration: none;
-      color: inherit; 
-      text-align: center; 
-      padding: 0.5em;
-    }
-    nav a.current {
-      border-bottom: 0.4em solid oklch(90% 3% 200); /* Thick bottom border for current page */
-      padding-bottom: 0.1em; /* Reduce bottom padding to balance the border height */
-    }
-    nav a:hover {
-      border-bottom: 0.4em solid var(--color-accent);
-      background-color: oklch(from var(--color-accent) 95% 5% h);
-      padding-bottom: 0.1em;
-  }
+  font: 100%/1.5 system-ui;
+  max-width: 100ch;
+  margin-inline: auto;
+  padding: 0 1rem;
+}
+
+nav {
+  margin-bottom: 1em;
+  border-bottom: 1px solid oklch(80% 3% 200);
+}
+
+nav a {
+  flex: 1;
+  text-decoration: none;
+  color: inherit;
+  text-align: center;
+  padding: 0.5em;
+}
+
+nav a.current {
+  border-bottom: 0.4em solid oklch(85% 3% 200);
+  padding-bottom: 0.1em;
+}
+
+nav a:hover {
+  border-bottom: 0.4em solid var(--color-accent);
+  background-color: oklch(from var(--color-accent) 95% 5% h);
+  padding-bottom: 0.1em;
+}
+
+h1, h2, h3, p, section {
+  margin-block: 1rem;
+}
+
+
