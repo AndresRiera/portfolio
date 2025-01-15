@@ -50,24 +50,5 @@ body {
   form {
     display: grid;
     grid-template-columns: auto 1fr; /* Two columns: auto for labels, 1fr for inputs */
-    align-items: center; /* Align items vertically */
-    gap: 1em; /* Add space between rows and columns */
-    }
-    
-  label {
-    text-align: right;
-    grid-column: 1; /* Place label in the first column */
-    }
-    
-  input,
-  textarea,
-  button {
-    grid-column: 2; /* Place inputs and button in the second column */
-    width: 100%; /* Ensure inputs take full width of their column */
-    box-sizing: border-box; /* Include padding and border in width */
-    }
-    
-  button {
-    grid-column: 1 / -1; /* Make button span across both columns */
-    justify-self: center; /* Center the button horizontally */
+
     }
