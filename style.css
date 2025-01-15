@@ -34,11 +34,11 @@ body {
       text-align: center; 
       padding: 0.5em;
     }
-    nav a.current {
+  nav a.current {
       border-bottom: 0.4em solid oklch(90% 3% 200); /* Thick bottom border for current page */
       padding-bottom: 0.1em; /* Reduce bottom padding to balance the border height */
     }
-    nav a:hover {
+  nav a:hover {
       border-bottom: 0.4em solid var(--color-accent);
       background-color: oklch(from var(--color-accent) 95% 5% h);
       padding-bottom: 0.1em;
@@ -46,13 +46,29 @@ body {
   input, textarea, button {
     font: inherit;
     }
-  form label, 
-  form input, 
-  form textarea, 
-  form button {
-      display: block;
-      width: 100%; 
-      box-sizing: border-box; 
-      margin-block: 0em;
-      font-weight: bold;
+  
+  form {
+    display: grid;
+    grid-template-columns: auto 1fr; /* Two columns: auto for labels, 1fr for inputs */
+    align-items: center; /* Align items vertically */
+    gap: 1em; /* Add space between rows and columns */
+    }
+    
+  label {
+    display: grid; /* Make labels grid containers */
+    grid-template-columns: subgrid; /* Use subgrid to inherit the form's grid */
+    grid-column: 1; /* Place label in the first column */
+    }
+    
+  input,
+  textarea,
+  button {
+    grid-column: 2; /* Place inputs and button in the second column */
+    width: 100%; /* Ensure inputs take full width of their column */
+    box-sizing: border-box; /* Include padding and border in width */
+    }
+    
+  button {
+    grid-column: 1 / -1; /* Make button span across both columns */
+    justify-self: center; /* Center the button horizontally */
     }
