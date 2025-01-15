@@ -68,29 +68,47 @@ body {
     }
   .projects {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(10em, 1fr));
-    gap: 1em; /* Adds spacing between grid items */
-    padding: 1em; /* Optional: Adds some padding around the grid */
+    grid-template-columns: repeat(auto-fill, minmax(10em, 1fr)); /*check size (15em) specified */
+    gap: 1em;
+    padding: 1em;
     }
   .projects article {
     display: grid;
-    grid-template-rows: subgrid; /* Enable subgrid for alignment */
-    grid-row: span 3; /* Each article spans 3 rows */
-    gap: 0.5em; /* Adjust spacing between items within each article */
-    border: 1px solid #ccc; /* Optional: Add a border for clarity */
+    grid-template-rows: subgrid;
+    grid-row: span 3;
+    gap: 0.5em; 
+    border: 1px solid #ccc; 
     padding: 1em;
     }
   
   .projects article h2 {
-    margin: 0; /* Remove extra spacing from the headings */
-    text-align: center; /* Optional: Center-align headings */
+    margin: 0; 
+    text-align: center; 
     }
   
   .projects article img {
-    max-width: 100%; /* Ensure images don't exceed container width */
+    max-width: 100%;
     height: auto;
     }
   
   .projects article p {
-    margin: 0; /* Remove excess spacing in paragraphs */
+    margin: 0; 
+    }
+  
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1.1; 
+    text-wrap: balance; 
+    margin: 0; 
+    }
+  
+
+  h1 {
+    font-size: 400%; 
+    margin-bottom: 1em; 
+    }
+  
+
+  h2 {
+    font-size: 200%; 
+    margin-bottom: 0.5em;
     }
