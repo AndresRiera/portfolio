@@ -112,14 +112,20 @@ body {
     font-size: 200%; 
     margin-bottom: 0.5em;
     }
-  h1 {
+  .resume-page h1 {
     color: #00274d; /* Dark navy blue */
     }
   
-  h2 {
+  .resume-page h2 {
     color: #004080; /* Medium blue */
     }
   
-  h3 {
+  .resume-page h3 {
     color: #0056b3; /* Lighter blue */
+    }
+  .resume-page hr {
+    border: none;
+    border-top: 2px solid #cccccc;
+    margin: 2em 0;
+    width: 100%;
     }
