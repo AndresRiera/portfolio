@@ -6,7 +6,11 @@
 html {
   accent-color: var(--color-accent);
   }
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
 body {
     font: 100%/1.5 system-ui;
     max-width: 100ch;
