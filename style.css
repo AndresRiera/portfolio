@@ -46,3 +46,11 @@ body {
   input, textarea, button {
     font: inherit;
     }
+  form label, 
+  form input, 
+  form textarea, 
+  form button {
+      display: block;
+      width: 100%; 
+      box-sizing: border-box; 
+    }
