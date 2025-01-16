@@ -46,6 +46,18 @@ body {
   form {
     display: grid;
     grid-template-columns: auto 1fr;
+    gap: 1em;
+  }
+  label{
+    display: grid;
+    grid-template-columns: subgrid;
+  }
+  input, textarea, button {
+    display: grid;
+    grid-template-columns: subgrid;
+  }
+  button {
+    grid-column: 1 / -1;
   }
    /* grid-template-columns: auto 1fr; 
     gap: 1em;
