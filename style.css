@@ -51,6 +51,7 @@ body {
   label {
     display: grid;
     grid-template-columns: subgrid;
+    font-weight: bold;
   }
   input, textarea {
     grid-column: 2;
@@ -58,28 +59,7 @@ body {
   button {
     grid-column: 1 / -1;
   }
-   /* grid-template-columns: auto 1fr; 
-    gap: 1em;
-    }
-
-  label {
-    display: subgrid;
-    grid-column: 1;
-    margin: 0;
-    }
-
-  input,
-  textarea, 
-  button {
-    display: subgrid;
-    grid-column: 2;
-    margin: 0;
-    }
-  button {
-    grid-column: 1 / -1;
-    margin: 0;
-    }
-  */
+   
   .projects {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(15em, 1fr)); /*check size (15em) specified */
