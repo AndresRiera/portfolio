@@ -48,11 +48,11 @@ body {
     grid-template-columns: auto 1fr;
     gap: 1em;
   }
-  label{
+  label {
     display: grid;
     grid-template-columns: subgrid;
   }
-  input, textarea, button {
+  input, textarea {
     grid-column: 2;
   }
   button {
