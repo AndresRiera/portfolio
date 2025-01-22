@@ -1,3 +1,6 @@
+const ARE_WE_HOME = document.documentElement.classList.contains('home');
+
+
 console.log('IT’S ALIVE!');
 
 function $$(selector, context = document) {
@@ -5,10 +8,10 @@ function $$(selector, context = document) {
 }
 
 let pages = [
-    { url: '/Users/andresriera/Desktop/dsc-106/portfolio/index.html', title: 'Home' },
-    { url: '/Users/andresriera/Desktop/dsc-106/portfolio/projects:index.html', title: 'Projects' },
-    { url: '/Users/andresriera/Desktop/dsc-106/portfolio/contact:index.html', title: 'Contact' },
-    { url: '/Users/andresriera/Desktop/dsc-106/portfolio/resume.html', title: 'Resume' },
+    { url: 'index.html', title: 'Home' },
+    { url: 'projects/index.html', title: 'Projects' },
+    { url: 'contact/index.html', title: 'Contact' },
+    { url: 'resume.html', title: 'Resume' },
     { url: 'https://github.com/AndresRiera', title: 'GitHub' },
   ];
 
