@@ -130,3 +130,31 @@ async function displayProjects() {
 
 
 displayProjects();
+
+export function renderProjects(project, containerElement, headingLevel = 'h2') {
+  if (!project || !containerElement) {
+      console.error("Invalid parameters: Ensure both project and containerElement are provided.");
+      return;
+  }
+
+  if (!/^h[1-6]$/.test(headingLevel)) {
+      console.error("Invalid headingLevel: Use a valid heading tag (h1, h2, ..., h6).");
+      return;
+  }
+
+  // Clear existing content in the container
+  containerElement.innerHTML = '';
+
+  // Create an article element for the project
+  const article = document.createElement('article');
+
+  // Populate the article with dynamic content
+  article.innerHTML = `
+      <${headingLevel}>${project.title || "Untitled Project"}</${headingLevel}>
+      <img src="${project.image || 'placeholder.png'}" alt="${project.title || 'Project Image'}">
+      <p>${project.description || 'No description available.'}</p>
+  `;
+
+  // Append the article to the container
+  containerElement.appendChild(article);
+}
