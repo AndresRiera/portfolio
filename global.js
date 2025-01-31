@@ -127,31 +127,31 @@ let pages = [
   //   }
   // }
 
-    async function displayProjects() {
-      const projectsContainer = document.querySelector('.projects');
-      if (!projectsContainer) {
-        console.error('Projects container not found.');
-        return;
-      }
+    // async function displayProjects() {
+    //   const projectsContainer = document.querySelector('.projects');
+    //   if (!projectsContainer) {
+    //     console.error('Projects container not found.');
+    //     return;
+    //   }
     
-      const projects = await fetchJSON('./lib/projects.json'); // Adjusted path
+    //   const projects = await fetchJSON('./lib/projects.json'); // Adjusted path
     
-      if (projects) {
-        const latestProjects = projects.slice(0, 3);
+    //   if (projects) {
+    //     const latestProjects = projects.slice(0, 3);
     
-        latestProjects.forEach(({ title, image, description }) => {
-          const article = document.createElement('article');
-          article.innerHTML = `
-            <h2>${title}</h2>
-            <img src="${image}" alt="${title}">
-            <p>${description}</p>
-          `;
-          projectsContainer.appendChild(article);
-        });
-      }
-    }
+    //     latestProjects.forEach(({ title, image, description }) => {
+    //       const article = document.createElement('article');
+    //       article.innerHTML = `
+    //         <h2>${title}</h2>
+    //         <img src="${image}" alt="${title}">
+    //         <p>${description}</p>
+    //       `;
+    //       projectsContainer.appendChild(article);
+    //     });
+    //   }
+    // }
   
-    displayProjects();
+    // displayProjects();
 
     export function renderProjects(project, container, headingTag = 'h2') {
       const article = document.createElement('article');
