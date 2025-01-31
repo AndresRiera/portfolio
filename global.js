@@ -111,48 +111,7 @@ let pages = [
         return null; // Return null or a default value
       }
     }
-  // export async function fetchJSON(url) {
-  //   try {
-  //     console.log('Fetching JSON from:', url); // Log the URL
-  //     const response = await fetch(url);
-
-  //     if (!response.ok) {
-  //       throw new Error(`Failed to fetch projects: ${response.status} ${response.statusText}`);
-  //     }
-
-  //     const data = await response.json();
-  //     return data;
-  //   } catch (error) {
-  //     console.error('Error fetching or parsing JSON data:', error.message);
-  //   }
-  // }
-
-    // async function displayProjects() {
-    //   const projectsContainer = document.querySelector('.projects');
-    //   if (!projectsContainer) {
-    //     console.error('Projects container not found.');
-    //     return;
-    //   }
-    
-    //   const projects = await fetchJSON('./lib/projects.json'); // Adjusted path
-    
-    //   if (projects) {
-    //     const latestProjects = projects.slice(0, 3);
-    
-    //     latestProjects.forEach(({ title, image, description }) => {
-    //       const article = document.createElement('article');
-    //       article.innerHTML = `
-    //         <h2>${title}</h2>
-    //         <img src="${image}" alt="${title}">
-    //         <p>${description}</p>
-    //       `;
-    //       projectsContainer.appendChild(article);
-    //     });
-    //   }
-    // }
   
-    // displayProjects();
-
     export function renderProjects(project, container, headingTag = 'h2') {
       const article = document.createElement('article');
   
