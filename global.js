@@ -95,21 +95,37 @@ let pages = [
     });
 
 
-  export async function fetchJSON(url) {
-    try {
-      console.log('Fetching JSON from:', url); // Log the URL
-      const response = await fetch(url);
-
-      if (!response.ok) {
-        throw new Error(`Failed to fetch projects: ${response.status} ${response.statusText}`);
+    export async function fetchJSON(url) {
+      try {
+        console.log('Fetching JSON from:', url); // Log the URL
+        const response = await fetch(url);
+    
+        if (!response.ok) {
+          throw new Error(`Failed to fetch JSON: ${response.status} ${response.statusText}`);
+        }
+    
+        const data = await response.json();
+        return data;
+      } catch (error) {
+        console.error('Error fetching JSON:', error.message);
+        return null; // Return null or a default value
       }
-
-      const data = await response.json();
-      return data;
-    } catch (error) {
-      console.error('Error fetching or parsing JSON data:', error.message);
     }
-  }
+  // export async function fetchJSON(url) {
+  //   try {
+  //     console.log('Fetching JSON from:', url); // Log the URL
+  //     const response = await fetch(url);
+
+  //     if (!response.ok) {
+  //       throw new Error(`Failed to fetch projects: ${response.status} ${response.statusText}`);
+  //     }
+
+  //     const data = await response.json();
+  //     return data;
+  //   } catch (error) {
+  //     console.error('Error fetching or parsing JSON data:', error.message);
+  //   }
+  // }
 
     async function displayProjects() {
       const projectsContainer = document.querySelector('.projects');
@@ -161,3 +177,4 @@ let pages = [
   
       return fetchJSON(`https://api.github.com/users/${username}`);
     }
+
