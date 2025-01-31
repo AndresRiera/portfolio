@@ -147,3 +147,24 @@ body {
       border: 1px solid #ccc; 
       border-radius: 0.25rem;
     }
+
+    /* #profile-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      max-width: 600px;
+      margin: 20px auto;
+    }
+    
+    #profile-stats dt {
+      font-weight: bold;
+      grid-row: 1;
+    }
+    
+    #profile-stats dd {
+      margin: 0;
+      grid-row: 2;
+    } */

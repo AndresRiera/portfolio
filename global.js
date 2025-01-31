@@ -94,67 +94,76 @@ let pages = [
     location.href = url;
     });
 
-    export async function fetchJSON(url) {
-      try {
-          const response = await fetch(url);
-  
-          if (!response.ok) {
-              throw new Error(`Failed to fetch projects: ${response.statusText}`);
-          }
-  
-          const data = await response.json();
-          return data;
-      } catch (error) {
-          console.error('Error fetching or parsing JSON data:', error);
+
+  export async function fetchJSON(url) {
+    try {
+      console.log('Fetching JSON from:', url); // Log the URL
+      const response = await fetch(url);
+
+      if (!response.ok) {
+        throw new Error(`Failed to fetch projects: ${response.status} ${response.statusText}`);
       }
+
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error('Error fetching or parsing JSON data:', error.message);
+    }
   }
 
-  import { fetchJSON } from './global.js';
-
-async function displayProjects() {
-    const projectsContainer = document.querySelector('.projects');
-
-    const projects = await fetchJSON('../lib/projects.json');
-
-  
-    projects.forEach(({ title, image, description }) => {
-        const article = document.createElement('article');
-        article.innerHTML = `
+    async function displayProjects() {
+      const projectsContainer = document.querySelector('.projects');
+      if (!projectsContainer) {
+        console.error('Projects container not found.');
+        return;
+      }
+    
+      // Fetch all projects from JSON
+      const projects = await fetchJSON('./lib/projects.json'); // Adjusted path
+    
+      if (projects) {
+        // Extract the first 3 projects
+        const latestProjects = projects.slice(0, 3);
+    
+        // Render only the latest 3 projects
+        latestProjects.forEach(({ title, image, description }) => {
+          const article = document.createElement('article');
+          article.innerHTML = `
             <h2>${title}</h2>
             <img src="${image}" alt="${title}">
             <p>${description}</p>
-        `;
-        projectsContainer.appendChild(article);
-    });
-}
+          `;
+          projectsContainer.appendChild(article);
+        });
+      }
+    }
+  
+    displayProjects();
 
-
-displayProjects();
-
-export function renderProjects(project, containerElement, headingLevel = 'h2') {
-  if (!project || !containerElement) {
-      console.error("Invalid parameters: Ensure both project and containerElement are provided.");
-      return;
+    export function renderProjects(project, container, headingTag = 'h2') {
+      const article = document.createElement('article');
+  
+      const title = document.createElement(headingTag);
+      title.textContent = project.title;
+      article.appendChild(title);
+  
+      const img = document.createElement('img');
+      img.src = project.image;
+      img.alt = project.title;
+      article.appendChild(img);
+  
+      const description = document.createElement('p');
+      description.textContent = project.description;
+      article.appendChild(description);
+  
+      container.appendChild(article);
   }
 
-  if (!/^h[1-6]$/.test(headingLevel)) {
-      console.error("Invalid headingLevel: Use a valid heading tag (h1, h2, ..., h6).");
-      return;
+  export async function fetchGitHubData(username) {
+    try {
+      console.log(`Fetching GitHub data for ${username}...`);
+      return fetchJSON(`https://api.github.com/users/${username}`);
+    } catch (error) {
+      console.error('Error fetching GitHub data:', error);
+    }
   }
-
-  // Clear existing content in the container
-  containerElement.innerHTML = '';
-
-  // Create an article element for the project
-  const article = document.createElement('article');
-
-  // Populate the article with dynamic content
-  article.innerHTML = `
-      <${headingLevel}>${project.title || "Untitled Project"}</${headingLevel}>
-      <img src="${project.image || 'placeholder.png'}" alt="${project.title || 'Project Image'}">
-      <p>${project.description || 'No description available.'}</p>
-  `;
-
-  // Append the article to the container
-  containerElement.appendChild(article);
-}
