@@ -156,11 +156,8 @@ let pages = [
       container.appendChild(article);
   }
 
-  export async function fetchGitHubData(username) {
-    try {
-      console.log(`Fetching GitHub data for ${username}...`);
+    export async function fetchGitHubData(username) {
+    // return statement here
+  
       return fetchJSON(`https://api.github.com/users/${username}`);
-    } catch (error) {
-      console.error('Error fetching GitHub data:', error);
     }
-  }
