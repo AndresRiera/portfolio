@@ -118,14 +118,11 @@ let pages = [
         return;
       }
     
-      // Fetch all projects from JSON
       const projects = await fetchJSON('./lib/projects.json'); // Adjusted path
     
       if (projects) {
-        // Extract the first 3 projects
         const latestProjects = projects.slice(0, 3);
     
-        // Render only the latest 3 projects
         latestProjects.forEach(({ title, image, description }) => {
           const article = document.createElement('article');
           article.innerHTML = `

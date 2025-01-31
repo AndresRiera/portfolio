@@ -30,14 +30,11 @@
 import { fetchJSON, renderProjects } from '../global.js';
 
 (async () => {
-    // Fetch project data
     const projects = await fetchJSON('../lib/projects.json');
 
-    // Update project count in the title
     const projectsTitle = document.querySelector('.projects-title');
     projectsTitle.textContent = `Projects (${projects.length})`;
 
-    // Render project cards
     const projectsContainer = document.querySelector('.projects');
     if (projects && projects.length > 0) {
         projects.forEach((project) => {
