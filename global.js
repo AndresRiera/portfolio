@@ -97,39 +97,53 @@ let pages = [
 
     export async function fetchJSON(url) {
       try {
-        console.log('Fetching JSON from:', url); // Log the URL
+        // console.log('Fetching JSON from:', url); // Log the URL
         const response = await fetch(url);
-    
         if (!response.ok) {
           throw new Error(`Failed to fetch JSON: ${response.status} ${response.statusText}`);
         }
-    
         const data = await response.json();
         return data;
-      } catch (error) {
-        console.error('Error fetching JSON:', error.message);
-        return null; // Return null or a default value
+      } 
+      catch (error) {
+        console.error("Error fetching or parsing JSON data:", error);
+        
       }
     }
+
+    export function renderProjects(project, containerElement, headingLevel = "h2") {
+      if (!containerElement) {
+          console.error("Invalid container element.");
+          return;
+      }
+    
+      const article = document.createElement("article");
+      article.innerHTML = `
+          <${headingLevel}>${project.title}</${headingLevel}>
+          <img src="${project.image}" alt="${project.title}">
+          <p>${project.description}</p>
+      `;
+      containerElement.appendChild(article);
+    }
   
-    export function renderProjects(project, container, headingTag = 'h2') {
-      const article = document.createElement('article');
+  //   export function renderProjects(project, container, headingTag = 'h2') {
+  //     const article = document.createElement('article');
   
-      const title = document.createElement(headingTag);
-      title.textContent = project.title;
-      article.appendChild(title);
+  //     const title = document.createElement(headingTag);
+  //     title.textContent = project.title;
+  //     article.appendChild(title);
   
-      const img = document.createElement('img');
-      img.src = project.image;
-      img.alt = project.title;
-      article.appendChild(img);
+  //     const img = document.createElement('img');
+  //     img.src = project.image;
+  //     img.alt = project.title;
+  //     article.appendChild(img);
   
-      const description = document.createElement('p');
-      description.textContent = project.description;
-      article.appendChild(description);
+  //     const description = document.createElement('p');
+  //     description.textContent = project.description;
+  //     article.appendChild(description);
   
-      container.appendChild(article);
-  }
+  //     container.appendChild(article);
+  // }
 
     export async function fetchGitHubData(username) {
     // return statement here
