@@ -196,22 +196,38 @@ body {
   
       overflow: visible;
   }
-
-    .legend {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
-      gap: 1.5em;
-      border: 1px solid #ddd;
-      padding: 1em;
-      margin: 1em;
-    }
   
-    .legend-item {
+    .legend{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      padding: 10px;
+      max-width: fit-content;
+      justify-content: center;
+      flex: 1 1 auto;
+  }
+  
+    .legend-item{
       display: flex;
       align-items: center;
-      gap: 0.5em;
-    }
+      gap: 8px;
+      padding: 4px;
+      white-space: nowrap;
+      flex: 1 1 auto;
+  }
+      
+  .legend .swatch {
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      display: inline-block;
+      gap: 2px;
+      background-color: var(--color);
+  }
   
+
     .container {
       display: flex;
       align-items: center;
@@ -233,4 +249,23 @@ body {
       background-color: var(--color);
       display: inline-block;
       border-radius: 50%;
+    }
+    
+    svg:has(path:hover) {
+      path:not(:hover) {
+        opacity: 0.5;
+      }
+  }
+  
+    path {
+      transition: 300ms;
+      cursor: pointer;
+  }
+  
+    .selected {
+      --color: oklch(60% 45% 0) !important;
+    
+      &:is(path) {
+        fill: var(--color);
+      }
     }
