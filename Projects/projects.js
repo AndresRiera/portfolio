@@ -201,7 +201,7 @@ import { fetchJSON, renderProjects } from "../global.js";
       filteredProjects = filteredProjects.filter(project => project.year === selectedYear);
     }
 
-    // Apply search filter
+    // Apply search filte
     if (query) {
       filteredProjects = filteredProjects.filter((project) => {
         const values = Object.values(project).join("\n").toLowerCase();
