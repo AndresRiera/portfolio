@@ -168,3 +168,69 @@ body {
       margin: 0;
       grid-row: 2;
     }
+
+    .project-details {
+      font-family: Baskerville, serif; /* Use Baskerville or fallback to serif */
+      margin-top: 10px;
+  }
+  
+    .project-year {
+      display: block;
+      color: gray;
+      font-size: 0.9em;
+      font-variant-numeric: oldstyle-nums; /* Make numbers look elegant */
+      margin-top: 5px; /* Add some spacing between description and year */
+    }
+
+    .project-year {
+      font-size: 0.9rem;
+      color: gray;
+      font-variant-numeric: oldstyle-nums;
+      margin-top: 5px;
+      padding: 5px;
+  }
+
+    #projects-plot {
+      max-width: 20em;
+      margin-block: 2em;
+  
+      overflow: visible;
+  }
+
+    .legend {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
+      gap: 1.5em;
+      border: 1px solid #ddd;
+      padding: 1em;
+      margin: 1em;
+    }
+  
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+    }
+  
+    .container {
+      display: flex;
+      align-items: center;
+      gap: 2em;
+    }
+  
+  /* SVG for the pie chart */
+    svg {
+      max-width: 20em;
+      margin-block: 2em;
+      overflow: visible;
+    }
+  
+  
+  /* Color swatch for each legend item */
+    .swatch {
+      width: 1em;
+      height: 1em;
+      background-color: var(--color);
+      display: inline-block;
+      border-radius: 50%;
+    }

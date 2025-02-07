@@ -111,39 +111,43 @@ let pages = [
       }
     }
 
+    // export function renderProjects(project, containerElement, headingLevel = "h2") {
+    //   if (!containerElement) {
+    //       console.error("Invalid container element.");
+    //       return;
+    //   }
+    
+    //   const article = document.createElement("article");
+    //   article.innerHTML = `
+    //       <${headingLevel}>${project.title}</${headingLevel}>
+    //       <img src="${project.image}" alt="${project.title}">
+    //       <time datetime="${project.year}">${project.year}</time>
+    //       <p>${project.description}</p>
+    //   `;
+    //   containerElement.appendChild(article);
+    // }
+
     export function renderProjects(project, containerElement, headingLevel = "h2") {
       if (!containerElement) {
           console.error("Invalid container element.");
           return;
       }
-    
+  
+      // Render the project card with the year displayed
       const article = document.createElement("article");
+      article.classList.add("project-card");
       article.innerHTML = `
-          <${headingLevel}>${project.title}</${headingLevel}>
-          <img src="${project.image}" alt="${project.title}">
-          <p>${project.description}</p>
+          <${headingLevel} class="project-title">${project.title}</${headingLevel}>
+          
+          
+          
+          <p class="project-description">${project.description}</p>
+          <time class="project-year" datetime="${project.year}">${project.year}</time>
+          <img src="${project.image}" alt="${project.title}" class="project-image">
+          
       `;
       containerElement.appendChild(article);
-    }
-  
-  //   export function renderProjects(project, container, headingTag = 'h2') {
-  //     const article = document.createElement('article');
-  
-  //     const title = document.createElement(headingTag);
-  //     title.textContent = project.title;
-  //     article.appendChild(title);
-  
-  //     const img = document.createElement('img');
-  //     img.src = project.image;
-  //     img.alt = project.title;
-  //     article.appendChild(img);
-  
-  //     const description = document.createElement('p');
-  //     description.textContent = project.description;
-  //     article.appendChild(description);
-  
-  //     container.appendChild(article);
-  // }
+  }
 
     export async function fetchGitHubData(username) {
     // return statement here
