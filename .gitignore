@@ -1,0 +1,8 @@
+# Ignore the generated CSV file
+meta/loc.csv
+
+# Ignore node_modules (installed dependencies)
+node_modules/
+
+# Ignore any other temporary files
+.DS_Store  # (Mac system files)
